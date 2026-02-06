@@ -28,7 +28,7 @@ const Profile = () => {
                 // Viewing someone else's profile
                 setIsOwnProfile(userEmail === user.email);
                 try {
-                    const res = await axios.get(`http://localhost:4000/api/user-by-email/${userEmail}`);
+                    const res = await axios.get(`https://linkedin-backend3.vercel.app/api/user-by-email/${userEmail}`);
                     setViewingUser(res.data.user);
                     // Load posts for this user
                     fetchUserPosts(userEmail);
@@ -41,7 +41,7 @@ const Profile = () => {
             } else if (user) {
                 // Viewing own profile - reload from database
                 try {
-                    const res = await axios.get(`http://localhost:4000/api/user-by-email/${user.email}`);
+                    const res = await axios.get(`https://linkedin-backend3.vercel.app/api/user-by-email/${user.email}`);
                     const updatedUser = res.data.user;
                     setViewingUser(updatedUser);
                     localStorage.setItem('user', JSON.stringify(updatedUser));
@@ -62,7 +62,7 @@ const Profile = () => {
 
     const fetchUserPosts = async (userEmail) => {
         try {
-            const response = await axios.get(`http://localhost:4000/api/posts/user/${userEmail}`);
+            const response = await axios.get(`https://linkedin-backend3.vercel.app/api/posts/user/${userEmail}`);
             setUserPosts(response.data);
         } catch (error) {
             console.error("Error fetching user posts:", error);

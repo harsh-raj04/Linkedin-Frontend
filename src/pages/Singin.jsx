@@ -16,7 +16,7 @@ const Singin = () => {
         setError(null);
 
         try {
-            const res = await axios.post('http://localhost:4000/api/signin', 
+            const res = await axios.post('https://linkedin-backend3.vercel.app/api/signin', 
                 { email, password }
             );
             console.log("Signin Response:", res.data);

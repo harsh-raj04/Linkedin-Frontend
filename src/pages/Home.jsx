@@ -24,7 +24,7 @@ const Home = () => {
 
     const fetchPosts = async () => {
         try {
-            const response = await axios.get('http://localhost:4000/api/posts');
+            const response = await axios.get('https://linkedin-backend3.vercel.app/api/posts');
             setPosts(response.data);
         } catch (error) {
             console.error("Error fetching posts:", error);
@@ -45,7 +45,7 @@ const Home = () => {
                 content: postText,
             };
 
-            const response = await axios.post('http://localhost:4000/api/posts', postData);
+            const response = await axios.post('https://linkedin-backend3.vercel.app/api/posts', postData);
             
             // Add new post to the beginning of the posts array
             setPosts([response.data.post, ...posts]);
@@ -61,7 +61,7 @@ const Home = () => {
         if (!user) return;
 
         try {
-            const response = await axios.put(`http://localhost:4000/api/posts/${postId}/like`, {
+            const response = await axios.put(`https://linkedin-backend3.vercel.app/api/posts/${postId}/like`, {
                 userId: user._id
             });
             
@@ -81,7 +81,7 @@ const Home = () => {
         if (!confirmDelete) return;
 
         try {
-            await axios.delete(`http://localhost:4000/api/posts/${postId}`, {
+            await axios.delete(`https://linkedin-backend3.vercel.app/api/posts/${postId}`, {
                 data: { userId: user._id }
             });
             

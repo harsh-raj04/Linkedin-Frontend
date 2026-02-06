@@ -18,7 +18,7 @@ const Signup = () => {
         setSuccess(null);
 
         try {
-            const res = await axios.post('http://localhost:4000/api/signup',
+            const res = await axios.post('https://linkedin-backend3.vercel.app/api/signup',
              { username, email, password })
             console.log("Signup Response:", res.data);
             setSuccess("Account created successfully! Redirecting to sign in...");

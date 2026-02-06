@@ -58,7 +58,7 @@ const EditProfile = () => {
         setLoading(true);
         
         try {
-            const res = await axios.put('http://localhost:4000/api/update-profile', {
+            const res = await axios.put('https://linkedin-backend3.vercel.app/api/update-profile', {
                 userId: user._id,
                 ...formData
             });

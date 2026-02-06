@@ -1,6 +1,6 @@
 import {BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom'
-import Singup from './pages/singup.jsx'
-import Singin from './pages/singin.jsx' 
+import Singup from './pages/Singup.jsx'
+import Singin from './pages/Singin.jsx' 
 import Home from './pages/Home.jsx'
 import Profile from './pages/Profile.jsx'
 import EditProfile from './pages/EditProfile.jsx'
